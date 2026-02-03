@@ -1,4 +1,4 @@
-Файл нового дага - dz1/dags/tem
+Файл нового дага - [dz1/dags/tem](https://github.com/Zhmikhail/HSE_ETL/blob/main/dz1/dags/temperature_data_processing.py)
 
 Я решил не менять, так как аирфлоу уже настроен на чтение оттуда
 Также я теперь собираю с докера, так как в образе не было библиотеки кагла
