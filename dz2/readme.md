@@ -1,8 +1,10 @@
 Файл нового дага - [бам сюда если ткнете вас переместит](https://github.com/Zhmikhail/HSE_ETL/blob/main/dz1/dags/temperature_data_processing.py)
 
 Я решил не менять, так как аирфлоу уже настроен на чтение оттуда
+
 Также я теперь собираю с докера, так как в образе не было библиотеки кагла
-после выполнения дага получился такой вывод из БД
+
+После выполнения дага получился такой вывод из БД
 
 airflow_db=# select * from temperature_extremes;
  id |    date    |    temperature     | type | rank |         created_at         
