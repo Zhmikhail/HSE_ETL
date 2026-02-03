@@ -1,0 +1,15 @@
+FROM apache/airflow:3.1.7rc2-python3.12
+# У меня у образа в вскоде подпись - последний пуш 5 часов назад. В общем максимальная свежатина
+
+USER root
+RUN apt-get update && apt-get install -y wget curl
+
+USER airflow
+RUN pip install --no-cache-dir \
+    kagglehub \
+    pandas \
+    numpy \
+    psycopg2-binary \
+    apache-airflow-providers-postgres \
+    apache-airflow-providers-common-sql
+
