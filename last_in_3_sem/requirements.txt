@@ -1,0 +1,9 @@
+apache-airflow==2.9.0
+apache-airflow-providers-postgres
+apache-airflow-providers-mongo
+protobuf<5
+pymongo
+psycopg2-binary
+pandas
+faker
+python-dotenv
