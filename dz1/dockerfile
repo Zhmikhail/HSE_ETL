@@ -2,7 +2,11 @@ FROM apache/airflow:3.1.7rc2-python3.12
 # У меня у образа в вскоде подпись - последний пуш 5 часов назад. В общем максимальная свежатина
 
 USER root
-RUN apt-get update && apt-get install -y wget curl
+RUN apt-get update && apt-get install -y wget curl default-jre-headless procps \
+    && rm -rf /var/lib/apt/lists/*
+# JAVA_HOME — автоопределение, работает и на amd64, и на arm64
+ENV JAVA_HOME=/usr
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 USER airflow
 RUN pip install --no-cache-dir \
@@ -11,5 +15,7 @@ RUN pip install --no-cache-dir \
     numpy \
     psycopg2-binary \
     apache-airflow-providers-postgres \
-    apache-airflow-providers-common-sql
+    apache-airflow-providers-common-sql \
+    pyspark==3.5.3 \
+    docker
 
