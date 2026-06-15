@@ -1,0 +1,20 @@
+CREATE TABLE ru_videos_raw (
+    row_id Uint64 NOT NULL,
+    video_id Utf8,
+    trending_date Utf8,
+    title Utf8,
+    channel_title Utf8,
+    category_id Int32,
+    publish_time Utf8,
+    tags Utf8,
+    views Uint64,
+    likes Uint64,
+    dislikes Uint64,
+    comment_count Uint64,
+    thumbnail_link Utf8,
+    comments_disabled Bool,
+    ratings_disabled Bool,
+    video_error_or_removed Bool,
+    description Utf8,
+    PRIMARY KEY (row_id)
+);

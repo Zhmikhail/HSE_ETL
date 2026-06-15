@@ -1,0 +1,20 @@
+SELECT
+    COUNT(*) AS rows_count,
+    COUNT(DISTINCT video_id) AS unique_videos,
+    MIN(views) AS min_views,
+    MAX(views) AS max_views,
+    SUM(CASE WHEN comments_disabled THEN 1 ELSE 0 END) AS comments_disabled_count,
+    SUM(CASE WHEN ratings_disabled THEN 1 ELSE 0 END) AS ratings_disabled_count,
+    SUM(CASE WHEN video_error_or_removed THEN 1 ELSE 0 END) AS removed_count
+FROM ru_videos_raw;
+
+SELECT
+    category_id,
+    COUNT(*) AS videos_count,
+    SUM(views) AS total_views,
+    SUM(likes) AS total_likes,
+    SUM(dislikes) AS total_dislikes,
+    SUM(comment_count) AS total_comments
+FROM ru_videos_raw
+GROUP BY category_id
+ORDER BY total_views DESC;
